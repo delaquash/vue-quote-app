@@ -33,10 +33,17 @@ router.delete('/delete/:id', async (req, res) => {
 
 // update a quote
 router.patch('/update/:id',async  (req, res) => {
-    const updatedQuote = await Quote.updateOne({ _id: req.params.id}, {$set: req.body});
+    const updatedQuote = await Quotes.updateOne({ _id: req.params.id}, {$set: req.body});
     res.json(updatedQuote)
 });
 
-
+// getting random quote
+router.get('/random', async (req, res) =>  {
+    const count = await Quotes.countDocuments();
+    const random = Math.floor(Math.random() * count);
+    // To skip between diferent quote when requesting for a quote
+    const q = await Quotes.findOne().skip(random)
+    res.json(q);
+})
 
 module.exports = router;

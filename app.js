@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 
 const QuotesRoute = require('./routes/quotes.js');
 app.use('/quotes', QuotesRoute);
-app.post('/quotes/new', QuotesRoute)
+
 
 
 // database
