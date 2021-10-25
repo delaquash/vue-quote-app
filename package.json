@@ -4,7 +4,6 @@
   "description": "A full-stack quotes app built with node, express, mongoDB and",
   "main": "app.js",
   "scripts": {
-    
     "start": "nodemon app.js"
   },
   "author": "Olaide Emmanuel",
