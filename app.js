@@ -5,20 +5,10 @@ const cors = require('cors');
 
 // express app
 const app = express();
-
+app.use(cors());
 
 // mongoDB URI
 const URI ="mongodb://delaquarsh:Equarshie85@vue-quote-app-shard-00-00.tt7jr.mongodb.net:27017,vue-quote-app-shard-00-01.tt7jr.mongodb.net:27017,vue-quote-app-shard-00-02.tt7jr.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-2lxzr9-shard-0&authSource=admin&retryWrites=true&w=majority"
-
-// routes
-app.get('/', (req, res) => {
-    res.send("Welcome to a new struggle")
-});
-
-const QuotesRoute = require('./routes/quotes.js');
-app.use('/quotes', QuotesRoute);
-
-
 
 // database
 const connectDB = async () => {
@@ -40,6 +30,14 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended: true
 }));
+
+// routes
+app.get('/', (req, res) => {
+    res.send("Welcome to a new struggle")
+});
+
+const QuotesRoute = require('./routes/quotes.js');
+app.use('/quotes', QuotesRoute);
 
 // server
 app.listen(5000, console.log("Listening on port 5000"));

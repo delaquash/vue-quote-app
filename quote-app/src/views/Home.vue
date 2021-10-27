@@ -1,18 +1,20 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="max-auto max-w screen lg">
+      <div class="flex items-center flex-col justisty-center">
+         <div class="btn" @click="$store.commit('GetRandomQoute')">
+        Get Random Quote
+          <p>
+            <span>{{$store.state.quote.content }} </span>
+            <span>{{ $store.state.quote.author }}</span>
+          </p>
+         </div>
+      </div>
+     </div>  
   </div>
+  <!-- {{$store.state.quote}} -->
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
 </script>
