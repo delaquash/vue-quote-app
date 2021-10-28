@@ -4,8 +4,8 @@
       <div class="flex items-center flex-col justisty-center">
          <div class="btn" @click="$store.commit('GetRandomQoute')">
         Get Random Quote
-          <p>
-            <span>{{$store.state.quote.content }} </span>
+          <p class="my-10 mb-6 text-2xl text-center tex-gray">
+            <span>"{{$store.state.quote.content }}"</span>
             <span>{{ $store.state.quote.author }}</span>
           </p>
          </div>
