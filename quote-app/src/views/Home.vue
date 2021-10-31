@@ -4,13 +4,15 @@
       <div class="flex items-center flex-col justisty-center">
          <div class="btn" @click="$store.commit('GetRandomQoute')">
         Get Random Quote
-          <p class="my-10 mb-6 text-2xl text-center tex-gray">
+          <p
+            class="my-10 mb-6 text-2xl text-center tex-gray"
+            v-if="typeof $store.state.quote._id != 'undefined' ">
             <span>"{{$store.state.quote.content }}"</span>
-            <span>{{ $store.state.quote.author }}</span>
+            <span class="text-gray-lighter">{{ $store.state.quote.author }}</span>
           </p>
          </div>
       </div>
-     </div>  
+     </div>
   </div>
   <!-- {{$store.state.quote}} -->
 </template>

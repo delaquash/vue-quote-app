@@ -3,7 +3,7 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     quote:{
-      
+
     },
     quotes:[],
   },
@@ -27,8 +27,9 @@ export default createStore({
           })
     }
   },
-  actions: {
-  },
-  modules: {
-  }
+ getters: {
+   getSpecificQuote: state => id => {
+     return state.quotes.filter(q => q._id == id)[0]
+   }
+ }
 })
