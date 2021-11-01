@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import All from '../views/All.vue'
+import Quote from '../views/Quote.vue'
 
 const routes = [
   {
@@ -13,6 +14,11 @@ const routes = [
     path: '/all',
     name: 'All Quotes',
     component: All
+  },
+  {
+    path: '/quote/:id',
+    name: 'Single Quotes',
+    component: Quote
   }
 
 ]
